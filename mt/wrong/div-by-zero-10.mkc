@@ -1,0 +1,13 @@
+i = 10;
+var a;
+
+switch(i)	{
+case 1:
+	a = 10;
+	break;
+default:
+	a = 0;
+	break;
+}
+
+1 / a;

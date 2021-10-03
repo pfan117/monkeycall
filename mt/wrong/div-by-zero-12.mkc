@@ -1,0 +1,16 @@
+i = 1;
+var a;
+
+switch(i)	{
+case 1:
+	a = 10;
+	break;
+case 2:
+	a = 10;
+	break;
+default:
+	a = 10;
+	break;
+}
+a = 0;
+1 / a;

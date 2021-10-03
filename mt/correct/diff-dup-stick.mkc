@@ -1,0 +1,20 @@
+a = "1";
+b = "2";
+
+c = Stick(a, b);
+Print("%s\n", c);
+if (Diff(c, "12"))	{ exit 1; }
+
+c = Stick(a);
+Print("%s\n", c);
+if (Diff(c, "1"))	{ exit 1; }
+
+c = "3";
+d = Stick(a, b, c);
+if (Diff(d, "123"))	{ exit 1; }
+Print("%s\n", c);
+
+a = 10;
+b = 10;
+if (Diff(a, b))	{ exit 1; }
+if (!Diff(1, 1 * b))	{ exit 1; }

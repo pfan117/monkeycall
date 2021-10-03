@@ -1,0 +1,93 @@
+var a, b, c, d, e, f, g, h;
+
+a = "\"string1__1  abce   \"";
+b = "string1__1  abce   ";
+Scan(a, "%s", c);
+if (Diff(b, c))	{
+	exit 1;
+}
+
+a = "1";
+b = 1;
+Scan(a, "%d", c);
+if (Diff(b, c))	{
+	exit 1;
+}
+
+a = "f";
+b = 0xf;
+Scan(a, "%x", c);
+if (Diff(b, c))	{
+	exit 1;
+}
+
+a = "\"string 1  \"1f";
+Scan(a, "%s%d%x", b, c, d);
+if (Diff("string 1  ", b) || Diff(1, c) || Diff(0xf, d))	{
+	exit 1;
+}
+
+a = "\"string 1  \" 1 f";
+Scan(a, "%s%d%x", b, c, d);
+if (Diff("string 1  ", b) || Diff(1, c) || Diff(0xf, d))	{
+	exit 1;
+}
+
+a = "\"string 1  \"100981ffff9f";
+Scan(a, "%s%d%x", b, c, d);
+if (Diff("string 1  ", b) || Diff(100981, c) || Diff(0xffff9f, d))	{
+	exit 1;
+}
+
+a = "\"string 1  \" 100981 ffff9f";
+Scan(a, "%s%d%x", b, c, d);
+if (Diff("string 1  ", b) || Diff(100981, c) || Diff(0xffff9f, d))	{
+	exit 1;
+}
+
+a = "\"string 1  \"\" 100981 ffff9f\"";
+Scan(a, "%s%s", b, c);
+if (Diff("string 1  ", b) || Diff(" 100981 ffff9f", c))	{
+	exit 1;
+}
+
+a = "\"string\\\"1\"\"string\\\"2\"\"string\\\"3\"";
+Scan(a, "%s%s%s", b, c, d);
+if (Diff("string\"1", b) || Diff("string\"2", c) || Diff("string\"3", d))
+{
+	exit 1;
+}
+
+a = "\"string\\\"1\"\"string\\\"2\"\"string\\\"3\"\"\"";
+Scan(a, "%s%s%s%s", b, c, d, e);
+if (Diff("string\"1", b) || Diff("string\"2", c) || Diff("string\"3", d)
+		|| Diff("", e))
+{
+	exit 1;
+}
+
+a = "\"string\\\"1\"  \"string\\\"2\"       \"string\\\"3\"  \"\"  ";
+Scan(a, "%s%s%s%s", b, c, d, e);
+if (Diff("string\"1", b) || Diff("string\"2", c) || Diff("string\"3", d)
+		|| Diff("", e))
+{
+	exit 1;
+}
+
+a = "\"string\\\"1\" 1212  \"string\\\"2\"ffff       \"\\s\\tri\\ng\\\"3\"  \"\"  9";
+Scan(a, "%s%d%s%x%s%s%d", b, c, d, e, f, g, h);
+if (Diff("string\"1", b)
+		|| Diff(1212, c)
+		|| Diff("string\"2", d)
+		|| Diff(0xffff, e)
+		|| Diff("\\s\\tri\\ng\"3", f)
+		|| Diff("", g)
+		|| Diff(9, h)
+		)
+{
+	exit 1;
+}
+
+exit 0;
+
+# eof

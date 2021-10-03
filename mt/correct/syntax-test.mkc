@@ -1,0 +1,45 @@
+12 + 9;
+function f1()	{
+	var i;
+	for(i = 1; i < 100; i ++)	{
+	}
+
+	if (i < 100)	{
+		i = 1000;
+	}
+
+
+	return;
+}
+
+var i = 100;
+
+if (i < 1000)	{
+	f1(i);
+}
+
+while(i < 1000)	{
+	f1(i);
+	i ++;
+}
+
+function f2(a, b, c)	{
+	12 + 9;
+	return 12;
+}
+
+1;
+2;
+"";
+"1";
+"\"";
+"a b";
+
+
+
+#a + b; # good comments
+
+# eof
+
+
+

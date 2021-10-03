@@ -1,0 +1,13 @@
+var s = 10000;
+
+function dec(i)	{
+	if (i)	{
+		i --;
+		dec(i);
+		s -= 1000;
+	}
+}
+
+dec(10);
+
+100 / s;

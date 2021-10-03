@@ -1,0 +1,12 @@
+a = 10;
+
+switch (a * 10)	{
+case 1:
+	a = 100;
+	break;
+case 2:
+	break;
+case 3:
+default:
+	break;
+}

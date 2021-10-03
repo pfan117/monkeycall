@@ -1,0 +1,14 @@
+function ca(a)	{
+	return a;
+}
+
+function foo(a, b, c)	{
+	return a + b + c;
+}
+
+foo(ca(1), ca(2), ca(3));
+foo(ca(1), ca(2), ca(3));
+foo(ca(1), ca(2), ca(3));
+foo(ca(1), ca(2), ca(3));
+foo(ca(1), ca(2), ca(3));
+foo(ca(1), ca(2), ca(3));

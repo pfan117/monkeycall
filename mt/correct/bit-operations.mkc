@@ -1,0 +1,38 @@
+a = 0x10101010;
+b = 0x20202020;
+
+c = a | b;
+if (c != 0x30303030)	{
+	return -1;
+}
+
+c = a ^ b;
+if (c != 0x30303030)	{
+	return -1;
+}
+
+c = a << 1;
+if (c != b)	{
+	return -1;
+}
+
+c = a << 2;
+if (c != (b << 1))	{
+	return -1;
+}
+
+c = b >> 1;
+if (c != a)	{
+	return -1;
+}
+
+if (a != (b >> 1))	{
+	return -1;
+}
+
+c = ~a;
+if (c != 0xefefefef)	{
+	return -1;
+}
+
+return 0;

@@ -1,0 +1,27 @@
+if (Strcmp(Base64En(""), ""))	{ exit 1; }
+if (Strcmp(Base64De(""), ""))	{ exit 1; }
+Print(MallocBalance(), "\n");
+
+if (Strcmp(Base64En("hello"), "aGVsbG8="))	{ exit 1; }
+if (Strcmp(Base64De("aGVsbG8="), "hello"))	{ exit 1; }
+if (Strcmp(Base64De(Base64En("hello")), "hello"))	{ exit 1; }
+if (Strcmp(Base64En(Base64De("aGVsbG8=")), "aGVsbG8="))	{ exit 1; }
+Print(MallocBalance(), "\n");
+
+if (Strcmp(Base64En("hello world!"), "aGVsbG8gd29ybGQh"))	{ exit 1; }
+if (Strcmp(Base64De("aGVsbG8gd29ybGQh"), "hello world!"))	{ exit 1; }
+if (Strcmp(Base64De(Base64En("hello world!")), "hello world!"))	{ exit 1; }
+if (Strcmp(Base64En(Base64De("aGVsbG8gd29ybGQh")), "aGVsbG8gd29ybGQh"))	{ exit 1; }
+Print(MallocBalance(), "\n");
+
+if (Strcmp(Base64En("foo"), "Zm9v"))	{ exit 1; }
+if (Strcmp(Base64De("Zm9v"), "foo"))	{ exit 1; }
+if (Strcmp(Base64De(Base64En("foo")), "foo"))	{ exit 1; }
+if (Strcmp(Base64En(Base64De("Zm9v")), "Zm9v"))	{ exit 1; }
+Print(MallocBalance(), "\n");
+
+if (Strcmp(Base64En("apple"), "YXBwbGU="))	{ exit 1; }
+if (Strcmp(Base64De("YXBwbGU="), "apple"))	{ exit 1; }
+if (Strcmp(Base64De(Base64En("apple")), "apple"))	{ exit 1; }
+if (Strcmp(Base64En(Base64De("YXBwbGU=")), "YXBwbGU="))	{ exit 1; }
+Print(MallocBalance(), "\n");

@@ -1,0 +1,13 @@
+function foo()	{
+	a = 10000;
+}
+
+function bar()	{
+	foo();
+}
+
+
+var a;
+bar();
+b = a - 10000;
+1 / b;

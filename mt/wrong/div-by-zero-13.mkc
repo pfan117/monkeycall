@@ -1,0 +1,10 @@
+a = 10;
+switch (a)	{
+case 1:
+	goto __finish;
+case 2:
+	goto __finish;
+}
+a = 0;
+1 / a;
+__finish:

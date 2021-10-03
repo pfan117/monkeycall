@@ -1,0 +1,7 @@
+function foo()	{
+	a = 100;
+}
+var a;
+foo();
+b = a - 100;
+1 / b;

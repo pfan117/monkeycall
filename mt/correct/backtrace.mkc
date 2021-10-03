@@ -1,0 +1,17 @@
+
+
+function level1()	{
+	level2(2, 4);
+}
+
+function level2()	{
+	level3("3");
+}
+
+function level3()	{
+	Backtrace();
+}
+
+level1(1);
+
+# eof

@@ -1,0 +1,6 @@
+
+function foo()	{
+	return 100;
+}
+
+a = 1 / (100 - foo());
