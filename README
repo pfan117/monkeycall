@@ -3,7 +3,7 @@ Monkey Call
 Defines of this thing:
 
 1, A programming language interpreter
-2, Provides a library and a stand alone executeable
+2, Provides a library and a standalone executeable
 3, Reenterable, light reusing cost
 4, Internal support data types: integer, string, memory buffer
 
